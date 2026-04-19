@@ -4,100 +4,159 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Contact | Birgit Rosch Haden</title>
+<meta name="description" content="Get in touch with Birgit Rosch Haden for warm, thoughtful executive support." />
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
   --cream: #f4eee5;
+  --cream-deep: #e7ddd0;
   --blue: #6f879c;
   --blue-deep: #4f6578;
   --ink: #24323d;
+  --muted: #6f746f;
   --white: #ffffff;
   --border: rgba(79,101,120,0.16);
   --shadow: 0 18px 45px rgba(36, 50, 61, 0.09);
   --field-bg: #f8f6f1;
-  --button-olive: #9c9a79;
-  --button-olive-deep: #8d8b6b;
+  --max-width: 1180px;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: 'Inter', sans-serif;
-  background: var(--cream);
+  background: linear-gradient(180deg, var(--cream) 0%, #fbf8f3 38%, #f7f2eb 100%);
   color: var(--ink);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .container {
-  max-width: 1100px;
+  width: min(calc(100% - 32px), var(--max-width));
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 /* HEADER */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(14px);
   background: var(--blue-deep);
-  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
 .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
+  padding: 18px 0;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .brand-mark {
   font-family: 'Cormorant Garamond', serif;
-  color: #fff;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--white);
 }
 
 .brand-sub {
-  color: rgba(255,255,255,0.7);
-  font-size: 0.7rem;
-  letter-spacing: 2px;
+  font-size: 0.72rem;
   text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgba(255,255,255,0.75);
 }
 
 .nav {
   display: flex;
+  align-items: center;
+  gap: 24px;
   flex-wrap: wrap;
 }
 
 .nav a {
-  color: #fff;
-  margin-left: 20px;
-  font-size: 0.9rem;
-  text-decoration: none;
+  font-size: 0.92rem;
+  color: var(--white);
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 1px;
+  background: var(--white);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav a:hover::after,
+.nav a:focus-visible::after,
+.nav a.active::after {
+  transform: scaleX(1);
 }
 
 /* HERO */
 .hero {
+  padding: 78px 0 38px;
   text-align: center;
-  padding: 80px 0 50px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--blue-deep);
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.01em;
 }
 
 .hero h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3.2rem;
-  margin-bottom: 15px;
+  font-size: clamp(3rem, 6vw, 5.2rem);
+  margin-bottom: 18px;
 }
 
 .hero p {
-  max-width: 600px;
+  max-width: 60ch;
   margin: 0 auto;
-  color: #5a6a76;
+  color: #55626d;
+  font-size: 1.04rem;
   line-height: 1.7;
 }
 
 /* FORM WRAP */
 .contact-section {
-  padding-bottom: 80px;
+  padding: 12px 0 80px;
 }
 
 .form-card {
@@ -106,7 +165,6 @@ body {
 }
 
 .form-card h3 {
-  font-family: 'Cormorant Garamond', serif;
   font-size: 2rem;
   margin-bottom: 28px;
   color: var(--ink);
@@ -203,14 +261,14 @@ button:hover {
 }
 
 /* MOBILE */
-@media (max-width: 800px) {
+@media (max-width: 760px) {
   .header-inner {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .nav a {
-    margin: 0 18px 0 0;
+  .nav {
+    gap: 14px 18px;
   }
 
   .hero {
@@ -233,22 +291,23 @@ button:hover {
 
 <header class="site-header">
   <div class="container header-inner">
-    <div>
-      <div class="brand-mark">Birgit Rosch Haden</div>
-      <div class="brand-sub">Executive Solutions</div>
-    </div>
+    <a href="index.html" class="brand" aria-label="Homepage">
+      <span class="brand-mark">Birgit Rosch Haden</span>
+      <span class="brand-sub">Executive Solutions</span>
+    </a>
 
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#reviews">Reviews</a>
-      <a href="contact.html">Contact</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html" class="active">Contact</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
+    <span class="eyebrow">Contact</span>
     <h1>Let’s work together</h1>
     <p>
       Whether you’re ready to get started or just want to ask a question,
