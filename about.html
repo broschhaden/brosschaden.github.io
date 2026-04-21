@@ -144,9 +144,13 @@
       padding: 12px 0 80px;
     }
 
-    .grid {
+    .top-panel {
+      margin-bottom: 26px;
+    }
+
+    .support-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 26px;
       align-items: start;
     }
@@ -282,7 +286,7 @@
     }
 
     @media (max-width: 900px) {
-      .grid, .cards {
+      .support-grid, .cards {
         grid-template-columns: 1fr;
       }
     }
@@ -326,23 +330,34 @@
     <section class="content-wrap">
       <div class="container">
         
-<div class="grid">
-  <div class="panel">
-    <h2>A disciplined, dependable partner to your leadership</h2>
-    <p>I work alongside leaders who are carrying a lot - acting as a steady, trusted extension of their leadership.</p>
-    <p>With 15+ years supporting C-suite and VP leaders, I bring clarity to complexity, structure to priorities, and discipline to execution.</p>
-    <p>I ensure the right things move forward - so you don’t need to be in everything.</p>
-    <p>Calm, discreet and dependable - so you can focus on what matters most.</p>
-  </div>
+<div class="panel top-panel">
+  <h2>A disciplined, dependable partner to your leadership</h2>
+  <p>I work alongside leaders who are carrying a lot - acting as a steady, trusted extension of their leadership.</p>
+  <p>With 15+ years supporting C-suite and VP leaders, I bring clarity to complexity, structure to priorities, and discipline to execution.</p>
+  <p>I ensure the right things move forward - so you don’t need to be in everything.</p>
+  <p>Calm, discreet and dependable - so you can focus on what matters most.</p>
+</div>
 
+<div class="support-grid">
   <div class="panel">
     <h2>What clients value</h2>
     <ul class="list">
-    <li>You don’t have to think about everything.</li>
-    <li>Priorities are clear and moving forward.</li>
-    <li>Someone is always a few steps ahead.</li>
-    <li>You have a calm, trusted sounding board.</li>
-    <li>Things get handled-properly and quietly.</li>
+      <li>You don’t have to think about everything.</li>
+      <li>Priorities are clear and moving forward.</li>
+      <li>Someone is always a few steps ahead.</li>
+      <li>You have a calm, trusted sounding board.</li>
+      <li>Things get handled properly and quietly.</li>
+    </ul>
+  </div>
+
+  <div class="panel">
+    <h2>When to bring me in</h2>
+    <ul class="list">
+      <li>Priorities are competing and nothing is moving cleanly</li>
+      <li>You’re carrying too much operational and mental load</li>
+      <li>Decisions are being delayed or not followed through</li>
+      <li>The business is growing faster than its structure</li>
+      <li>You need calm, experienced judgement behind the scenes.</li>
     </ul>
   </div>
 </div>
